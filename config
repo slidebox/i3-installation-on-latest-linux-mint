@@ -96,33 +96,27 @@ workspace 4 output $firstMonitor
 workspace 5 output $firstMonitor
 workspace 6 output $secondMonitor
 workspace 7 output $secondMonitor
-workspace 8 output $secondMonitor
-workspace 9 output $secondMonitor
-workspace 10 output $secondMonitor
+workspace 八 output $secondMonitor
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace 一
+bindsym $mod+2 workspace 二
+bindsym $mod+3 workspace 三
+bindsym $mod+4 workspace 四
+bindsym $mod+5 workspace 五
+bindsym $mod+6 workspace 六
+bindsym $mod+7 workspace 七
+bindsym $mod+8 workspace 八
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1; workspace 1
-bindsym $mod+Shift+2 move container to workspace 2; workspace 2
-bindsym $mod+Shift+3 move container to workspace 3; workspace 3
-bindsym $mod+Shift+4 move container to workspace 4; workspace 4
-bindsym $mod+Shift+5 move container to workspace 5; workspace 5
-bindsym $mod+Shift+6 move container to workspace 6; workspace 6
-bindsym $mod+Shift+7 move container to workspace 7; workspace 7
-bindsym $mod+Shift+8 move container to workspace 8; workspace 8
-bindsym $mod+Shift+9 move container to workspace 9; workspace 9
-bindsym $mod+Shift+0 move container to workspace 10; workspace 10
+bindsym $mod+Shift+1 move container to workspace 一
+bindsym $mod+Shift+2 move container to workspace 二
+bindsym $mod+Shift+3 move container to workspace 三
+bindsym $mod+Shift+4 move container to workspace 四
+bindsym $mod+Shift+5 move container to workspace 五
+bindsym $mod+Shift+6 move container to workspace 六
+bindsym $mod+Shift+7 move container to workspace 七
+bindsym $mod+Shift+8 move container to workspace 八
 
 
 
@@ -131,7 +125,7 @@ bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 #####################################################################################################################
 
 # start dmenu
-bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 
 # gmrun
 bindsym mod1+F2 exec --no-startup-id gmrun
@@ -280,7 +274,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 # qwerty/azerty issue for letter z
 bindsym $mod+s layout stacking
-bindsym $mod+z layout tabbed
+bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 
@@ -291,7 +285,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+#bindsym $mod+k focus child
 
 
 
@@ -357,37 +351,12 @@ font pango:Noto Mono Regular 13
 #assign [class="Firefox|Vivaldi-stable|Vivaldi-snapshot|Opera"]                      → 1
 #assign [class="Chromium|Google-chrome"]                                             → 1
 
-# Workspace 2 text editor related
-#assign [class="sublime-text|sublime_text|Sublime_text|subl|Subl|subl3|Subl3"]       → 2
-#assign [class="Xed|xed|Brackets|Atom|Code|Geany"]                                   → 2
+# Workspace 2 Discord
+assign [class="discord"] 二
 
-# Workspace 3 Inkscape
-#assign [class="Inkscape"]                                                           → 3
-
-# Workspace 4 Gimp
-#assign [class="Gimp"]                                                               → 4
-
-# Workspace 5 Images and meld
-#assign [class="ristretto|Ristretto|shotwell|Shotwell|Xviewer|Nitrogen"]             → 5
-#assign [class="feh|gthumb|Gthumb|eog|Eog|Pinta|pixeluvo|Pixeluvo"]                  → 5
-#assign [class="Meld"]                                                               → 5
-
-# Workspace 6 all video related software
-#assign [class="Vlc|vlc"]                                                            → 6
-
-# Workspace 7 virtual machines and settings
-#assign [class="Vmplayer|VirtualBox"]						    → 7
-
-# Workspace 8 file managers
-#assign [class="Nemo|Thunar|Caja|nautilus|Nautilus"]                                 → 8
-
-# Workspace 9 email clients
-#assign [class="Geary|Evolution"]                                                    → 9
-
-# Workspace 10 music related
-#assign [class="Spotify|spotify"]                                                    → 10
-#fix for spotify not moving to workspace 10
-#for_window [class="Spotify"] move to workspace 10
+# Workspace 3 Spotify
+assign [class="Spotify"] 三
+for_window [class="Spotify"] move to workspace 三
 
 
 
@@ -525,7 +494,6 @@ bindsym --release $mod+Escape exec xkill
 #workspace 1 related
 bindsym $mod+F1 exec --no-startup-id exo-open --launch webbrowser;workspace 1;focus
 #qwerty/azerty conflict with w
-bindsym $mod+w exec --no-startup-id exo-open --launch webbrowser;workspace 1;focus
 bindsym control+mod1+f exec --no-startup-id firefox;workspace 1; focus
 bindsym control+mod1+v exec --no-startup-id vivaldi-snapshot;workspace 1; focus
 bindsym control+mod1+g exec --no-startup-id chromium-browser;workspace 1;focus
@@ -555,18 +523,8 @@ bindsym $mod+F7 exec --no-startup-id virtualbox;workspace 7;focus
 #workspace 8 related
 for_window [class="Nemo"] focus
 bindsym $mod+F8 exec --no-startup-id nemo;workspace 8;focus
-bindsym $mod+Shift+Return exec --no-startup-id nemo; workspace 8;focus
+bindsym $mod+Shift+Return exec --no-startup-id nemo
 bindsym control+mod1+b exec --no-startup-id nemo;workspace 8;focus
-
-#workspace 9 related
-bindsym $mod+F9 exec --no-startup-id evolution;workspace 9;focus
-bindsym control+mod1+e exec --no-startup-id evolution;workspace 9;focus
-#bindsym $mod+F9 exec --no-startup-id geary;workspace 9;focus
-#bindsym control+mod1+e exec --no-startup-id geary;workspace 9;focus
-
-#workspace 10 related
-bindsym $mod+F10 exec --no-startup-id spotify;workspace 10;focus
-bindsym control+mod1+s exec --no-startup-id spotify;workspace 10;focus
 
 
 
@@ -763,10 +721,10 @@ popup_during_fullscreen smart
 # want it
 
 
-for_window [class="^.*"] border pixel 2
-gaps inner 5
-gaps outer 5
-#smart_gaps on
+for_window [class="^.*"] border pixel 4
+gaps inner 4
+gaps outer 4
+smart_gaps on
 #smart_borders on
 
 
@@ -891,8 +849,8 @@ colors {
         statusline #eeeeee
         separator  #666666
         #                     border  backgr. text
-        focused_workspace     #a9a9a9 #5f676a #eeeeee
-        active_workspace      #a9a9a9 #5f676a #a9a9a9
+        focused_workspace     #F0B398 #5f676a #eeeeee
+        active_workspace      #F0B398 #5f676a #a9a9a9
         inactive_workspace    #a9a9a9 #222222 #a9a9a9
         urgent_workspace      #a9a9a9 #d42121 #FFFFFF
         }
@@ -905,7 +863,7 @@ colors {
 # class                 border  backgr. text    indicator
 client.placeholder      #242424 #242424 #242424
 client.background       #242424 #242424 #242424
-client.focused          #4A4A4A #4A4A4A #e5e5e5 #4A4A4A
+client.focused          #f0b398 #f0b398 #2b2b2b #f0b398
 client.unfocused        #222222 #222222 #aaaaaa #222222
 client.focused_inactive #222222 #222222 #a9a9a9 #222222
 client.urgent           #d42121 #d42121 #f7f7f7 #d42121
@@ -941,48 +899,11 @@ client.urgent           #d42121 #d42121 #f7f7f7 #d42121
 #            statusline #eeeeee
 #            separator #666666
              #                  border  backgr. text
-#            focused_workspace  #4c7899 #285577 #ffffff
-#            active_workspace   #333333 #5f676a #ffffff
+#            focused_workspace  #F0B398 #285577 #ffffff
+#            active_   #333333 #5f676a #ffffff
 #            inactive_workspace #333333 #222222 #888888
 #            urgent_workspace   #2f343a #900000 #ffffff
 #            }
-
-# Alternatives
-# BLue and grey Colors
-# https://github.com/Gravemind/ArchLinux/blob/master/.i3/config
-# class                   border  backgr. text    indicator
-# client.focused          #000000 #285577 #dddddd #0099ff
-# client.focused_inactive #000000 #333333 #888888 #484e50
-# client.unfocused        #000000 #000000 #555555 #292d2e
-# client.urgent           #2f343a #900000 #ffffff #900000
-
-# blue background with white text
-# Windows decoration colors
-# class                   border  backgr. text    indicator
-# client.background color         #222222
-# client.focused          #4c7899 #285577 #ffffff #2e9ef4
-# client.focused_inactive #333333 #5f676a #ffffff #484e50
-# client.unfocused        #333333 #222222 #888888 #292d2e
-# client.urgent           #2f343a #900000 #ffffff #900000
-
-# Blue-green background - orange text
-# Windows decoration colors
-# http://www.fastlinux.eu/_archiv/index.php?page=linux047
-# class                    border  backgr. text
-# client.focused           #2B6473 #2B6473 #FFA000
-# client.focused_inactive  #004050 #004050 #FFA000
-# client.unfocused         #004050 #004050 #cccccc
-# client.urgent            #900000 #900000 #ffffff
-
-
-# Red background - black text
-# Windows decoration colors
-# https://github.com/Blueblur/dotfiles/blob/master/.i3/config
-# class                 border  backgr. text    indicator
-# client.focused          #d64937 #d64937 #2D2D2D #2e9ef4
-# client.focused_inactive #2d2d2d #2d2d2d #dcdcdc #484e50
-# client.unfocused        #2D2D2D #2d2d2d #dcdcdc #292d2e
-# client.urgent           #2D2D2D #2D2D2D #dcdcdc #900000
 
 
 
@@ -1049,12 +970,4 @@ client.urgent           #d42121 #d42121 #f7f7f7 #d42121
 #exec --no-startup-id setxkbmap us
 
 
-
-#####################################################################################################################
-#################                          unclutter                                                #################
-#####################################################################################################################
-
-# NOT USED
-
-# get the mouse out of the way with unclutter
-#exec --no-startup-id unclutter
+exec_always feh --bg-scale /home/slidebox/Pictures/dark.jpeg
