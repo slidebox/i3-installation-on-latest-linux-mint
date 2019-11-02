@@ -30,9 +30,6 @@ sudo apt-get install -y i3status i3lock
 #sudo apt-get install -y i3-wm
 sudo apt-get install -y dmenu
 
-# conky
-sudo apt-get install -y conky-all
-
 # geany
 #sudo apt-get install -y geany
 
